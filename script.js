@@ -24,7 +24,7 @@
 		<td>${title}</td>
 		<td>${author}</td>
 		<td>${isbn}</td>
-		<td><button class="delete" id="remove">X</button></td>
+		<td><button class="delete">X</button></td>
 	`;
 		   
 
@@ -34,22 +34,15 @@
         authorInput.value = "";
         isbnInput.value = "";
 
-        // bookList.addEventListener("click", (e) => {
-        //   if (e.target.classList.contains("delete")) {
-        //     if (confirm("Are you sure you want to remove this book?")) {
-        //       const row = e.target.parentElement.parentElement;
-        //       bookList.removeChild(row);
-        //     }
-        //   }
-        // });
-		  const remove=document.getElementById("remove");
-		  remove.addEventListener("click", () => {
-			  if(confirm("Are you sure you want to remove ?"))
-			  {
-				   const row = remove.parentElement.parentElement;
-                  bookList.removeChild(row);
-			  }
-		  });
+        bookList.addEventListener("click", (e) => {
+          if (e.target.classList.contains("delete")) {
+            if (confirm("Are you sure you want to remove this book?")) {
+              const row = e.target.parentElement.parentElement;
+              bookList.removeChild(row);
+            }
+          }
+        });
+		  
       });
 //e.target is button in table and its parent is <td> and <td> parent is
 //<tr>. So I put that <tr> in row and deleted it.
