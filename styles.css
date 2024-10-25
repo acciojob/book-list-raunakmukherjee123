@@ -34,7 +34,8 @@ input[type="text"] {
 .table {
         width: 80%;
         margin: 0 auto;
-        border-collapse: collapse;
+      /* margin-left:180px;*/
+	 border-collapse: collapse;
       }
 .table th,
       .table td {
